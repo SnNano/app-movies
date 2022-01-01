@@ -1,0 +1,298 @@
+<app-header></app-header>
+<!-- Carousel -->
+<div class="mt-5" id="header-carousel">
+  <div
+    id="carouselExampleControls"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="row mx-5">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+              <div class="carousel-images">
+                <img
+                  src="../../assets/images/hunger-poster.jpg"
+                  class="w-100 img-fluid"
+                  alt="mv-poster"
+                />
+                <div class="carousel-down">
+                  <div class="carousel-start d-flex justify-content-center">
+                    <span class="rounded-circle">
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </div>
+                  <div class="carousel-title">
+                    <a href="#" class="fw-bold">Movie title</a>
+                  </div>
+                  <div class="carousel-right">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+              <div class="carousel-images">
+                <img
+                  src="../assets/images/maze-poster.jpg"
+                  class="w-100 img-fluid"
+                  alt="mv-poster"
+                />
+                <div class="carousel-down">
+                  <div class="carousel-start d-flex justify-content-center">
+                    <span class="rounded-circle">
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </div>
+                  <div class="carousel-title">
+                    <a href="#" class="fw-bold">Movie title</a>
+                  </div>
+                  <div class="carousel-right">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="carousel-images">
+                <img
+                  src="../../assets/images/hunger-poster.jpg"
+                  class="w-100 img-fluid"
+                  alt="mv-poster"
+                />
+                <div class="carousel-down">
+                  <div class="carousel-start d-flex justify-content-center">
+                    <span class="rounded-circle">
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </div>
+                  <div class="carousel-title">
+                    <a href="#" class="fw-bold">Movie title</a>
+                  </div>
+                  <div class="carousel-right">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container">
+          <div class="row mx-5">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+              <div class="carousel-images">
+                <img
+                  src="../../assets/images/hunger-poster.jpg"
+                  class="w-100 img-fluid"
+                  alt="mv-poster"
+                />
+                <div class="carousel-down">
+                  <div class="carousel-start d-flex justify-content-center">
+                    <span class="rounded-circle">
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </div>
+                  <div class="carousel-title">
+                    <a href="#" class="fw-bold">Movie title</a>
+                  </div>
+                  <div class="carousel-right">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+              <div class="carousel-images">
+                <img
+                  src="../../assets/images/hunger-poster.jpg"
+                  class="w-100 img-fluid"
+                  alt="mv-poster"
+                />
+                <div class="carousel-down">
+                  <div class="carousel-start d-flex justify-content-center">
+                    <span class="rounded-circle">
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </div>
+                  <div class="carousel-title">
+                    <a href="#" class="fw-bold">Movie title</a>
+                  </div>
+                  <div class="carousel-right">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="carousel-images">
+                <img
+                  src="../../assets/images/hunger-poster.jpg"
+                  class="w-100 img-fluid"
+                  alt="mv-poster"
+                />
+                <div class="carousel-down">
+                  <div class="carousel-start d-flex justify-content-center">
+                    <span class="rounded-circle">
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </div>
+                  <div class="carousel-title">
+                    <a href="#" class="fw-bold">Movie title</a>
+                  </div>
+                  <div class="carousel-right">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <a href="#" class="start-btn mt-5">Get started</a>
+  </div>
+</div>
+<!-- End carousel -->
+
+<!-- Movies section -->
+<section id="Movies" class="movies-section">
+  <div class="big-circles"></div>
+  <div class="medium-circles"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div
+        class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3"
+        *ngFor="let elt of movie"
+      >
+        <div class="movies-images">
+          <img
+            src="https://image.tmdb.org/t/p/w500{{ elt.poster_path }}"
+            class="w-100 img-fluid"
+            alt="mv-poster"
+          />
+          <div class="movies-down">
+            <div class="movies-start d-flex justify-content-center">
+              <span class="rounded-circle">
+                <i class="fas fa-caret-right"></i
+              ></span>
+            </div>
+            <div class="movies-title text-center">
+              <a routerLink="movie/details/{{ elt.id }}" class="fw-bold">{{
+                elt.title
+              }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-spinner></app-spinner>
+      <div
+        class="
+          col-lg-12
+          cl-md-12
+          col-sm-12 col-12
+          d-flex
+          justify-content-center
+        "
+      >
+        <a (click)="displayMore()" class="start-btn my-5" [hidden]="!showMore"
+          >Load more</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End movies section -->
+<!-- Categories section -->
+<section id="Categories">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="#" class="category-btn">Category 1</a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="#" class="category-btn">Category 1</a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="#" class="category-btn">Category 1</a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="#" class="category-btn">Category 1</a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="#" class="category-btn">Category 1</a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="#" class="category-btn">Category 1</a>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="w-25 me-3">
+          <a href="#" class="category-btn">Category 1</a>
+        </div>
+        <div class="w-25">
+          <a href="#" class="category-btn">Category 1</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End categories section -->
+<!-- contact section -->
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-6 col-12">
+        <div class="mb-4">
+          <h1 class="h5 fw-bold">Links may interests you</h1>
+        </div>
+        <ul class="list-unstyled">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <li class="li-item"><a href="#">Coming soon</a></li>
+              <li class="li-item"><a href="#">New movies</a></li>
+              <li class="li-item"><a href="#">Old movies</a></li>
+              <li class="li-item"><a href="#">Kids movies</a></li>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <li class="li-item"><a href="#">(2020 - 2021)</a></li>
+              <li class="li-item"><a href="#">(2019 - 2020)</a></li>
+              <li class="li-item"><a href="#">(2019 - 2020)</a></li>
+              <li class="li-item"><a href="#">(2019 - 2020)</a></li>
+            </div>
+          </div>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+        <div class="logo-wrapper">
+          <a href="#" class="fs-2 fw-bold text-dark">LOGO</a>
+        </div>
+        <div class="ms-4">
+          <form method="POST">
+            <div class="search-icon">
+              <input class="search-form" type="text" placeholder="Search ..." />
+            </div>
+          </form>
+        </div>
+        <div class="social-media mt-3 ms-2">
+          <span class="me-3"
+            ><a href="#"><i class="fab fa-facebook"></i></a
+          ></span>
+          <span class="me-3"
+            ><a href="#"><i class="fab fa-youtube"></i></a
+          ></span>
+          <span class="me-3"
+            ><a href="#"><i class="fab fa-linkedin"></i></a
+          ></span>
+          <span class="me-3"
+            ><a href="#"><i class="fab fa-instagram"></i></a
+          ></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End contact section -->

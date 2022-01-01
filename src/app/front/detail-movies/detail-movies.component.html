@@ -1,0 +1,135 @@
+<div class="body">
+  <!-- Header -->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand fs-2 text-white fw-bold" routerLink="/">LOGO</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarContent"
+        >
+          <form method="POST">
+            <div class="search-icon">
+              <input class="search-form" type="text" placeholder="Search ..." />
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+  </header>
+  <!-- End Header -->
+  <!-- Detail section -->
+  <section id="detail" class="mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+          <div class="movie-image mb-3">
+            <img
+              src="https://image.tmdb.org/t/p/w500{{ movieItem?.poster_path }}"
+              class="w-100 img-fluid"
+              alt="movie-poster"
+            />
+            <div class="watch-btn text-center">
+              <a href="#" class="a-watch-btn">Watch now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="movie-box mb-3">
+            <h1 class="h4">Story Line</h1>
+            <p>
+              {{ movieItem?.overview }}
+            </p>
+            <div class="d-flex justify-content-between">
+              <span
+                ><i class="fas fa-star text-warning me-2"></i
+                >{{ movieItem?.vote_average }}</span
+              >
+              <p class="text-danger">{{ movieItem?.status }}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 mb-3">
+              <div class="movie-box genre">
+                <h1 class="h5">Production by:</h1>
+                <ul
+                  class="list-unstyled"
+                  *ngFor="let prod of movieItem?.production_companies"
+                >
+                  <li>- {{ prod?.name }}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-3">
+              <div class="movie-box genre">
+                <h1 class="h5">Genres:</h1>
+                <ul
+                  class="list-unstyled"
+                  *ngFor="let genre of movieItem?.genres"
+                >
+                  <li>- {{ genre?.name }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="d-flex justify-content-center text-center">
+            <a class="download-btn"
+              ><i class="fas fa-download me-2"></i>Download</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End detail section -->
+  <!-- Related section -->
+  <section id="related">
+    <div class="container">
+      <div class="row">
+        <div class="my-3">
+          <h1 class="h2 text-white">Related movies:</h1>
+        </div>
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let related of relatedMovie">
+            <div class="slide">
+              <div class="movies-images-detail">
+                <a routerLink="/movie/details/{{ related?.id }}" class="fw-bold"
+                  ><img
+                    src="https://image.tmdb.org/t/p/w500{{
+                      related?.poster_path
+                    }}"
+                    class="w-100 img-fluid"
+                    alt="mv-poster"
+                /></a>
+                <div class="movies-down">
+                  <div class="movies-title text-center">
+                    <a
+                      routerLink="/movie/details/{{ related?.id }}"
+                      class="fw-bold"
+                      >{{ related.title }}</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </section>
+  <!-- End related section -->
+</div>
