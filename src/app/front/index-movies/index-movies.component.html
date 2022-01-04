@@ -14,26 +14,16 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+      <div
+        class="col-lg-4 col-md-4 col-sm-6 col-12"
+        routerLink="movie/details/{{ latest?.id }}"
+      >
         <div class="carousel-images">
           <img
             src="https://image.tmdb.org/t/p/w500{{ latest?.poster_path }}"
             class="w-100 img-fluid"
             alt="mv-poster"
           />
-          <div class="carousel-down">
-            <div class="carousel-start d-flex justify-content-between">
-              <span>
-                <i class="fas fa-star"></i>{{ latest?.vote_average }}</span
-              >
-              <p>+15</p>
-            </div>
-            <div class="carousel-title">
-              <a routerLink="movie/details/{{ latest?.id }}" class="fw-bold">{{
-                latest?.title
-              }}</a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -48,26 +38,18 @@
   <div class="container-fluid">
     <div class="row">
       <div
-        class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3"
+        class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3"
         *ngFor="let elt of movie"
       >
-        <div class="movies-images">
+        <div class="movies-images" routerLink="movie/details/{{ elt.id }}">
           <img
             src="https://image.tmdb.org/t/p/w500{{ elt.poster_path }}"
             class="w-100 img-fluid"
             alt="mv-poster"
           />
-          <div class="movies-down">
-            <div class="movies-start d-flex justify-content-center">
-              <span class="rounded-circle">
-                <i class="fas fa-caret-right"></i
-              ></span>
-            </div>
-            <div class="movies-title text-center">
-              <a routerLink="movie/details/{{ elt.id }}" class="fw-bold">{{
-                elt.title
-              }}</a>
-            </div>
+          <div class="movie-d">
+            <h1 class="h6">{{ elt.title }}</h1>
+            <span>{{ elt.vote_average }}</span>
           </div>
         </div>
       </div>

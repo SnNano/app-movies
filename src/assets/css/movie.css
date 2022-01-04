@@ -155,80 +155,6 @@ a.start-btn:hover {
   cursor: pointer;
   overflow: hidden;
 }
-.carousel-images::after {
-  content: "";
-  position: absolute;
-  background: linear-gradient(
-    to bottom,
-    var(--bs-LightPurple),
-    rgba(0, 0, 0, 1) 100%
-  );
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  border-radius: 7px;
-  transition: opacity 0.5s ease-in;
-}
-.carousel-images:hover::after {
-  opacity: 0.3;
-}
-
-.carousel-images .carousel-down {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  top: 0;
-  z-index: 2;
-  transition: opacity 0.5s ease-in;
-}
-.carousel-images:hover .carousel-down {
-  opacity: 1;
-}
-.carousel-title,
-.carousel-right {
-  position: absolute;
-  bottom: 12%;
-}
-.carousel-start {
-  position: relative;
-  width: 100%;
-  top: 4%;
-  padding: 0 2rem;
-}
-.carousel-start span {
-  color: var(--bs-white);
-}
-.carousel-start i {
-  font-size: 30px;
-  color: yellow;
-}
-.carousel-start p {
-  font-size: 20px;
-  color: red;
-}
-
-.carousel-down .carousel-title {
-  left: 5%;
-}
-.carousel-down .carousel-title a {
-  color: var(--bs-white);
-  font-size: 24px;
-}
-.carousel-start span.rounded-circle {
-  display: inline-block;
-  width: 70px;
-  height: 70px;
-  background-color: transparent;
-  border-left: 5px dashed var(--bs-white);
-  border-right: 5px solid var(--bs-white);
-  border-top: 5px solid var(--bs-white);
-  border-bottom: 5px solid var(--bs-white);
-}
-
 #Movies {
   padding: 100px 50px 100px 50px;
   background-color: var(--bs-LightPurple);
@@ -296,9 +222,8 @@ a.start-btn:hover {
   overflow: hidden;
 }
 .movies-images img {
-  border-radius: 7px;
   object-fit: fill;
-  height: 271.81px;
+  height: 391.81px;
 }
 
 .movies-images {
@@ -306,13 +231,46 @@ a.start-btn:hover {
   cursor: pointer;
   overflow: hidden;
   height: 100%;
+  box-shadow: 0 6px 7px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+.movie-d {
+  background-color: var(--bs-white);
+  display: flex;
+  justify-content: space-between;
+  max-height: 100%;
+  padding: 1rem 0.5rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in;
+}
+.movies-images:hover .movie-d {
+  transform: translateY(0);
+}
+.movie-d h1 {
+  margin-top: 5px;
+}
+.movie-d span {
+  background-color: var(--bs-Hardgreen);
+  color: #fff;
+  border-radius: 4px;
+  width: 45px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
 }
 .movies-images::after {
   content: "";
   position: absolute;
   background: linear-gradient(
     to bottom,
-    var(--bs-LightPurple),
+    var(--bs-HarderGreen),
     rgba(0, 0, 0, 1) 100%
   );
   opacity: 0;
@@ -321,8 +279,8 @@ a.start-btn:hover {
   z-index: 1;
   left: 0;
   top: 0;
-  border-radius: 7px;
-  transition: opacity 0.5s ease-in;
+  border-radius: 4px;
+  transition: opacity 0.3s ease-in;
 }
 .movies-images:hover::after {
   opacity: 0.7;
@@ -434,7 +392,7 @@ li.li-item a {
   letter-spacing: 2px;
   font-size: 16px;
   width: 100%;
-  /* border-top: 1px solid rgba(255, 255, 255, 0.17); */
+  z-index: 1;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--bs-lightGray);

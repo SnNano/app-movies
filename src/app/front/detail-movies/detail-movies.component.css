@@ -76,7 +76,7 @@
   color: var(--bs-white);
   background-color: #78a733;
 }
-.movies-images-detail img {
+.movies-images img {
   height: 471.81px !important;
 }
 #related {

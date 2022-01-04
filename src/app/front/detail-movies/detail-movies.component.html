@@ -79,23 +79,20 @@
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let related of relatedMovie">
             <div class="slide">
-              <div class="movies-images-detail">
-                <a routerLink="/movie/details/{{ related?.id }}" class="fw-bold"
-                  ><img
-                    src="https://image.tmdb.org/t/p/w500{{
-                      related?.poster_path
-                    }}"
-                    class="w-100 img-fluid"
-                    alt="mv-poster"
-                /></a>
-                <div class="movies-down">
-                  <div class="movies-title text-center">
-                    <a
-                      routerLink="/movie/details/{{ related?.id }}"
-                      class="fw-bold"
-                      >{{ related.title }}</a
-                    >
-                  </div>
+              <div
+                class="movies-images"
+                routerLink="/movie/details/{{ related.id }}"
+              >
+                <img
+                  src="https://image.tmdb.org/t/p/w500{{
+                    related?.poster_path
+                  }}"
+                  class="w-100 img-fluid"
+                  alt="mv-poster"
+                />
+                <div class="movie-d">
+                  <h1 class="h6">{{ related?.title }}</h1>
+                  <span>{{ related?.vote_average }}</span>
                 </div>
               </div>
             </div>
