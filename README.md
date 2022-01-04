@@ -1,6 +1,7 @@
 # AppMovies
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
+I also used a public API for fetching movies called TMDB.
 
 ## Development server
 
