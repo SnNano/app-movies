@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Movie } from 'src/app/modals/movies';
-import { DetailsService } from 'src/app/services/detail/details.service';
+import { MoviesService } from 'src/app/services/movies/movies.service';
 
 @Component({
   selector: 'app-detail-movies',
@@ -14,7 +14,7 @@ export class DetailMoviesComponent implements OnInit {
   movieItem: Movie;
   relatedMovie: Movie[];
   constructor(
-    private detailService: DetailsService,
+    private detailService: MoviesService,
     private activated: ActivatedRoute
   ) { }
 

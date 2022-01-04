@@ -9,6 +9,6 @@ import { DataService } from '../data.service';
 export class MoviesService extends DataService{
 
   constructor(http: HttpClient) {
-    super(`${environment.apiUrl}/movie/popular?api_key=${environment.apiKey}`, http)
+    super(`${environment.apiUrl}/movie/`, http)
    }
 }

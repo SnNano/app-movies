@@ -36,7 +36,7 @@
               "src/assets/css/bootstrap.min.css",
               "src/assets/css/movie.css"            ],
             "scripts": [
-
+              "src/assets/js/style.js"
             ]
           },
           "configurations": {

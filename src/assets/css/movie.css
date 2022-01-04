@@ -1,64 +1,149 @@
 :root {
   --bs-white: #ffffff;
-  --bs-LightPurple: #bc8cf2;
-  --bs-HardPurple: #aa14f0;
+  /* --bs-LightPurple: #bc8cf2;
+  --bs-HardPurple: #aa14f0; */
   --bs-lightGray: #eeeeee;
-  --bs-green: #17d7a0;
-  --bs-Hardgreen: #179e78;
+  --bs-yellow: #ffc900;
+  --bs-LightYellow: #fff89a;
+  --bs-Hardgreen: #1a5f7a;
+  --bs-HarderGreen: #16536b;
   --bs-black: #000;
 }
-html {
-  height: 100%;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   font-family: "Poppins", sans-serif;
   position: relative;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
 }
-#header-carousel {
-  padding-bottom: 100px;
-}
-.first-bg {
+
+/* NavBar */
+.nav {
   position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: var(--bs-HarderGreen);
 }
-.movie-bg {
-  position: absolute;
-  width: 100%;
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
 }
-.collapse form .search-form {
-  padding-top: 0.3125rem;
+.nav h1 {
+  font-size: 25px;
+  font-weight: bold;
 }
-.search-form {
-  width: 240px;
+.nav ul {
+  list-style-type: none;
+  color: #ffc900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.nav a {
+  padding: 0 20px;
+  color: #ffc900;
+}
+.nav a.active,
+.nav a:hover {
+  color: var(--bs-white);
+}
+.search-item {
+  position: relative;
   height: 40px;
-  outline: none;
-  border: none;
-  border-radius: 20px;
-  padding-left: 30px;
-  background-color: var(--bs-LightPurple);
+}
+.btn-search {
+  color: var(--bs-HarderGreen);
+  background-color: var(--bs-yellow);
+  width: 40px;
+  height: 40px;
+  border-bottom-right-radius: 9px;
+  border-top-right-radius: 9px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  transition: width 0.3s ease;
 }
 
-div.search-icon {
+.btn-search:focus,
+.search-form {
+  outline: 0;
+}
+.search-form {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 9px;
+  padding-left: 30px;
+  background-color: var(--bs-white);
+  color: #000;
+  transition: width 0.3s ease;
+}
+.search-form.active {
+  width: 240px;
+}
+.search-form.active .btn {
+  transform: translateX(198px);
+}
+/* Hero section */
+
+.hero {
+  background-color: var(--bs-Hardgreen);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  color: var(--bs-yellow);
 }
-.search-icon::after {
-  font-family: "Font Awesome 5 Free";
-  content: "\f002";
-  position: absolute;
-  font-weight: 900;
-  padding: 8px 15px;
-  background-color: var(--bs-LightPurple);
-  left: -23px;
-  top: 0px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+
+.hero h1 {
+  color: var(--bs-yellow);
 }
+.hero p {
+  color: var(--bs-lightGray);
+  margin: 2rem 0;
+  font-size: 19px;
+  letter-spacing: 2px;
+}
+
+a.start-btn {
+  width: 220px;
+  height: 50px;
+  background-color: var(--bs-yellow);
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  z-index: 1;
+  color: var(--bs-Hardgreen);
+  text-align: center;
+  line-height: 50px;
+  transition: 0.4s ease;
+}
+a.start-btn:focus {
+  transform: scale(0.95);
+}
+a.start-btn:hover {
+  background-color: var(--bs-LightYellow);
+  color: var(--bs-black);
+}
+
 .carousel-images img {
   border-radius: 7px;
   object-fit: fill;
@@ -73,7 +158,11 @@ div.search-icon {
 .carousel-images::after {
   content: "";
   position: absolute;
-  background-color: var(--bs-LightPurple);
+  background: linear-gradient(
+    to bottom,
+    var(--bs-LightPurple),
+    rgba(0, 0, 0, 1) 100%
+  );
   opacity: 0;
   width: 100%;
   height: 100%;
@@ -105,11 +194,23 @@ div.search-icon {
   bottom: 12%;
 }
 .carousel-start {
-  position: absolute;
+  position: relative;
   width: 100%;
-  bottom: 0;
-  top: 25%;
+  top: 4%;
+  padding: 0 2rem;
 }
+.carousel-start span {
+  color: var(--bs-white);
+}
+.carousel-start i {
+  font-size: 30px;
+  color: yellow;
+}
+.carousel-start p {
+  font-size: 20px;
+  color: red;
+}
+
 .carousel-down .carousel-title {
   left: 5%;
 }
@@ -127,98 +228,67 @@ div.search-icon {
   border-top: 5px solid var(--bs-white);
   border-bottom: 5px solid var(--bs-white);
 }
-.carousel-start span.rounded-circle:hover {
-  width: 73px;
-  height: 73px;
-}
-.carousel-start i {
-  position: absolute;
-  font-size: 60px;
-  left: 47%;
-  color: var(--bs-white);
-}
-.carousel-start i:hover {
-  font-size: 62px;
-}
-.carousel-down .carousel-right {
-  right: 25px;
-}
-.carousel-right i {
-  font-size: 28px;
-}
 
-.carousel-right i {
-  color: var(--bs-green);
-}
-
-.carousel-right i:hover {
-  color: var(--bs-Hardgreen);
-}
-
-a.start-btn {
-  width: 220px;
-  height: 50px;
-  background-color: var(--bs-HardPurple);
-  font-size: 18px;
-  border: none;
-  border-radius: 10px;
-  z-index: 1;
-  color: var(--bs-white);
-  text-align: center;
-  line-height: 50px;
-}
-a.start-btn:hover {
-  background-color: var(--bs-LightPurple);
-  color: var(--bs-white);
-}
 #Movies {
   padding: 100px 50px 100px 50px;
   background-color: var(--bs-LightPurple);
   overflow: hidden;
   position: relative;
 }
-.big-circles::after {
+.big-circles-top::after,
+.big-circles-bottom::after {
   content: "";
   position: absolute;
   width: 500px;
   height: 500px;
-  background-color: var(--bs-white);
+  background-color: var(--bs-yellow);
   opacity: 0.2;
   border-radius: 50%;
   right: -138px;
   top: -54px;
   overflow: hidden;
 }
-.big-circles::before {
+.big-circles-bottom::after,
+.big-circles-bottom::before {
+  top: 60% !important;
+}
+.big-circles-top::before,
+.big-circles-bottom::before {
   content: "";
   position: absolute;
   width: 500px;
   height: 500px;
-  background-color: var(--bs-white);
+  background-color: var(--bs-Hardgreen);
   opacity: 0.2;
   border-radius: 50%;
   left: -5px;
   top: 192px;
   overflow: hidden;
 }
-.medium-circles::after {
+.medium-circles-top::after,
+.medium-circles-bottom::after {
   content: "";
   position: absolute;
   width: 300px;
   height: 300px;
-  background-color: var(--bs-white);
+  background-color: var(--bs-Hardgreen);
   opacity: 0.2;
   border-radius: 50%;
   right: -46px;
   top: -54px;
   overflow: hidden;
 }
-.medium-circles::before {
+.medium-circles-bottom::after,
+.medium-circles-bottom::before {
+  top: 69% !important;
+}
+.medium-circles-top::before,
+.medium-circles-bottom::before {
   content: "";
   position: absolute;
   width: 250px;
   height: 250px;
-  background-color: var(--bs-white);
+  background-color: var(--bs-yellow);
   opacity: 0.2;
   border-radius: 50%;
   left: 147px;
@@ -312,25 +382,28 @@ a.start-btn:hover {
   z-index: 1;
 }
 #Categories {
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   padding-top: 100px;
-  background-color: var(--bs-HardPurple);
+  background-color: var(--bs-Hardgreen);
 }
 a.category-btn {
   width: 100%;
   height: 50px;
-  background-color: var(--bs-LightPurple);
+  background-color: var(--bs-yellow);
   font-size: 18px;
   border: none;
   border-radius: 10px;
   z-index: 1;
-  color: var(--bs-white);
+  color: var(--bs-Hardgreen);
   text-align: center;
   line-height: 50px;
 }
 a.category-btn:hover {
-  background-color: var(--bs-lightGray);
-  color: var(--bs-black);
+  background-color: var(--bs-LightYellow);
+  color: var(--bs-Hardgreen);
+}
+.search-footer .search-form {
+  width: 260px;
 }
 #contact {
   background-color: var(--bs-lightGray);
@@ -355,13 +428,13 @@ li.li-item a {
 #footer {
   position: absolute;
   bottom: 0;
-  padding: 20px;
   height: 80px;
-  background-color: var(--bs-HardPurple);
-  color: var(--bs-white);
-  font-size: 20px;
+  background-color: var(--bs-Hardgreen);
+  color: var(--bs-yellow);
+  letter-spacing: 2px;
+  font-size: 16px;
   width: 100%;
-  border-top: 1px solid rgba(255, 255, 255, 0.17);
+  /* border-top: 1px solid rgba(255, 255, 255, 0.17); */
 }
 ::-webkit-scrollbar-thumb {
   background: var(--bs-lightGray);
@@ -378,9 +451,6 @@ li.li-item a {
     border-radius: 7px;
     object-fit: fill;
     height: 494.75px;
-  }
-  .carousel-start i {
-    left: 48%;
   }
 }
 @media (max-width: 991px) {
