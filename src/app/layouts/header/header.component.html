@@ -7,10 +7,17 @@
       <li><a href="#">Categories</a></li>
       <li><a href="#">Contact</a></li>
       <div class="search-item">
-        <input class="search-form" type="text" placeholder="Search ..." />
-        <button class="btn-search">
-          <i class="fas fa-search"></i>
-        </button>
+        <form [formGroup]="searchForm">
+          <input
+            class="search-form"
+            type="text"
+            placeholder="Search ..."
+            formControlName="search"
+          />
+          <button class="btn-search" (click)="onSubmit()">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
       </div>
     </ul>
   </div>

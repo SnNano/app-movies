@@ -24,7 +24,15 @@ export class IndexMoviesComponent implements OnInit {
     this.getLatestMovie();
     this.getLatestMovies();
     this.getGenres();
+    this.getSearchResults();
   }
+
+  getSearchResults(){
+    this.moviesService.receiveSearchResults().subscribe((res:any)=>{
+      this.movie=res;
+    })
+  }
+
   getLatestMovie(){
     this.moviesService.getLatest().subscribe((res:any)=>{
       this.latest=res;
@@ -45,7 +53,6 @@ export class IndexMoviesComponent implements OnInit {
   getGenres(){
     this.moviesService.getGenres().subscribe((res:any)=>{
       this.categories=res.genres;
-      console.log(this.categories)
     })
   }
   searchMovie(){
