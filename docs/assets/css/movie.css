@@ -1,7 +1,5 @@
 :root {
   --bs-white: #ffffff;
-  /* --bs-LightPurple: #bc8cf2;
-  --bs-HardPurple: #aa14f0; */
   --bs-lightGray: #eeeeee;
   --bs-yellow: #ffc900;
   --bs-LightYellow: #fff89a;
@@ -447,6 +445,24 @@ li.li-item a {
   .search-item {
     margin-left: 1.3rem;
     padding: 0.2rem 0;
+  }
+
+  .hero {
+    height: 60vh;
+    align-items: flex-start;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+  .hero p {
+    font-size: 15px;
+  }
+  .download-btn {
+    width: 100% !important;
+  }
+  #footer div {
+    text-align: center;
   }
 }
 @media (max-width: 991px) {
