@@ -2,24 +2,29 @@
 <nav class="nav">
   <div class="container">
     <h1 class="logo"><a routerLink="/">LOGO</a></h1>
-    <ul>
-      <li><a routerLink="/home" class="active">Home</a></li>
-      <li><a href="#">Categories</a></li>
-      <li><a href="#">Contact</a></li>
-      <div class="search-item">
-        <form [formGroup]="searchForm">
-          <input
-            class="search-form"
-            type="text"
-            placeholder="Search ..."
-            formControlName="search"
-          />
-          <button class="btn-search" (click)="onSubmit()">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-      </div>
-    </ul>
+    <a class="toggle-btn">
+      <i class="fas fa-bars"></i>
+    </a>
+    <div class="nav-links">
+      <ul>
+        <li><a routerLink="/home" class="active">Home</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Contact</a></li>
+        <div class="search-item">
+          <form [formGroup]="searchForm">
+            <input
+              class="search-form"
+              type="text"
+              placeholder="Search ..."
+              formControlName="search"
+            />
+            <button class="btn-search" (click)="onSubmit()">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+      </ul>
+    </div>
   </div>
 </nav>
 <!-- End Navbar -->
