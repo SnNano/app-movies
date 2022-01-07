@@ -450,6 +450,7 @@ li.li-item a {
   .hero {
     height: 60vh;
     align-items: flex-start;
+    overflow-x:hidden;
   }
 
   .hero h1 {

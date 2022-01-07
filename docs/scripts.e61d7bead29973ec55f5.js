@@ -1,1 +1,0 @@
-document.addEventListener("DOMContentLoaded",e=>{const t=document.querySelector(".btn-search"),c=document.querySelector(".search-form"),n=document.querySelector(".toggle-btn"),o=document.querySelector(".nav-links");t.addEventListener("click",()=>{c.classList.toggle("active")}),n.addEventListener("click",()=>{o.classList.toggle("active")})});
