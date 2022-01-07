@@ -100,6 +100,15 @@ a {
 .search-form.active .btn {
   transform: translateX(198px);
 }
+.toggle-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  display: none;
+}
+.toggle-btn i {
+  font-size: 28px;
+}
 /* Hero section */
 
 .hero {
@@ -399,9 +408,6 @@ li.li-item a {
   border-radius: 15px;
 }
 @media (max-width: 575px) {
-  .search-form {
-    margin-left: 17px;
-  }
   .search-icon::after {
     margin-left: 23px;
   }
@@ -409,6 +415,38 @@ li.li-item a {
     border-radius: 7px;
     object-fit: fill;
     height: 494.75px;
+  }
+  .toggle-btn {
+    display: block;
+  }
+  .nav .container {
+    /* display: none; */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    height: 2px;
+    transform: translateX(-200%);
+    transition: all 0.5s ease-in;
+  }
+  .nav-links.active {
+    height: 140px;
+    transform: translateX(0);
+  }
+  .nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .nav ul li {
+    padding: 0.2rem 0;
+  }
+  .btn-search {
+    top: 3px;
+  }
+  .search-item {
+    margin-left: 1.3rem;
+    padding: 0.2rem 0;
   }
 }
 @media (max-width: 991px) {
